@@ -183,15 +183,15 @@ PORT=5001
 NODE_ENV=development
 
 # Database
-MONGODB_URI=mongodb://localhost:27017/vnpayment
+MONGODB_URI=your-mongodb-connection-string
 
 # JWT
 JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
 
-# MoMo Sandbox
-MOMO_PARTNER_CODE=MOMO
-MOMO_ACCESS_KEY=F8BBA842ECF85
-MOMO_SECRET_KEY=K951B6PE1waDMi640xX08PD3vg6EkVlz
+# MoMo Sandbox (get from MoMo Business Portal)
+MOMO_PARTNER_CODE=your-partner-code
+MOMO_ACCESS_KEY=your-access-key
+MOMO_SECRET_KEY=your-secret-key
 MOMO_ENDPOINT=https://test-payment.momo.vn/v2/gateway/api/create
 
 # VNPay (nếu sử dụng)
@@ -332,9 +332,8 @@ curl -X POST http://localhost:5001/api/orders \
 
 ### MoMo Sandbox
 ```
-Partner Code: MOMO
-Access Key: F8BBA842ECF85
-Secret Key: K951B6PE1waDMi640xX08PD3vg6EkVlz
+Đăng ký tài khoản MoMo Business để lấy credentials:
+https://business.momo.vn
 ```
 
 ### Admin Panel
