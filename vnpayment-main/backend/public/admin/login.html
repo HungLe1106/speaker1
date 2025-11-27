@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - E-Commerce Panel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Amazon Ember', Arial, sans-serif;
+            background: #EAEDED;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            border: 1px solid #D5D9D9;
+            overflow: hidden;
+            max-width: 1000px;
+            width: 100%;
+            display: flex;
+        }
+
+        .login-left {
+            flex: 1;
+            padding: 60px 50px;
+            background: linear-gradient(135deg, #232F3E 0%, #131921 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-left h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .login-left p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 14px;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #FF9900;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .login-right {
+            flex: 1;
+            padding: 60px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .login-header h2 {
+            color: #0F1111;
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .login-header p {
+            color: #565959;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #0F1111;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #D5D9D9;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.2s;
+            box-shadow: 0 1px 2px rgba(15,17,17,.15) inset;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #FF9900;
+            box-shadow: 0 0 0 3px rgba(255,153,0,0.1), 0 1px 2px rgba(15,17,17,.15) inset;
+        }
+
+        .password-toggle {
+            position: relative;
+        }
+
+        .password-toggle button {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #007185;
+            cursor: pointer;
+            font-size: 12px;
+            padding: 5px 10px;
+            font-weight: 600;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(to bottom, #FFD814, #F7CA00);
+            color: #0F1111;
+            border: 1px solid #FCD200;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 2px 5px rgba(213,217,217,.5);
+        }
+
+        .btn-login:hover {
+            background: linear-gradient(to bottom, #F7CA00, #F0B800);
+            border-color: #F2C200;
+        }
+
+        .btn-login:active {
+            background: #F0B800;
+        }
+
+        .btn-login:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            display: none;
+            border: 1px solid;
+        }
+
+        .alert.show {
+            display: block;
+        }
+
+        .alert-error {
+            background: #FEF5F5;
+            color: #B12704;
+            border-color: #F4CFCF;
+        }
+
+        .alert-success {
+            background: #F2FAF3;
+            color: #067D62;
+            border-color: #C6EFCE;
+        }
+
+        .default-credentials {
+            background: #F7F8F8;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #D5D9D9;
+            margin-top: 20px;
+            font-size: 13px;
+        }
+
+        .default-credentials strong {
+            color: #FF9900;
+        }
+
+        .default-credentials p {
+            margin: 5px 0;
+            color: #565959;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .login-container {
+                flex-direction: column;
+            }
+
+            .login-left {
+                padding: 40px 30px;
+            }
+
+            .login-right {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-left">
+            <h1>🛡️ Admin Panel</h1>
+            <p>Quản lý toàn bộ hệ thống E-Commerce của bạn với các tính năng mạnh mẽ</p>
+            
+            <ul class="features-list">
+                <li>Quản lý sản phẩm (CRUD)</li>
+                <li>Xác nhận & xử lý đơn hàng</li>
+                <li>Dashboard thống kê chi tiết</li>
+                <li>Phân tích doanh thu</li>
+                <li>Quản lý kho hàng</li>
+                <li>Xem danh sách người dùng</li>
+                <li>Báo cáo real-time</li>
+                <li>Bảo mật JWT & Role-based</li>
+            </ul>
+        </div>
+
+        <div class="login-right">
+            <div class="login-header">
+                <h2>Đăng Nhập</h2>
+                <p>Chào mừng trở lại! Vui lòng đăng nhập để tiếp tục</p>
+            </div>
+
+            <div id="alert" class="alert"></div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Tên đăng nhập</label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        placeholder="Nhập tên đăng nhập"
+                        required
+                        autocomplete="username"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Mật khẩu</label>
+                    <div class="password-toggle">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="••••••••"
+                            required
+                            autocomplete="current-password"
+                        >
+                        <button type="button" id="togglePasswordBtn">Hiện</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-login" id="btnLogin">
+                    Đăng nhập
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:5001';
+
+        // Toggle password visibility
+        document.addEventListener('DOMContentLoaded', () => {
+            const togglePasswordBtn = document.getElementById('togglePasswordBtn');
+            const passwordInput = document.getElementById('password');
+            
+            togglePasswordBtn.addEventListener('click', function() {
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    togglePasswordBtn.textContent = 'Ẩn';
+                } else {
+                    passwordInput.type = 'password';
+                    togglePasswordBtn.textContent = 'Hiện';
+                }
+            });
+
+            // Check if already logged in
+            const token = localStorage.getItem('adminToken');
+            if (token) {
+                window.location.href = '/admin/dashboard';
+            }
+        });
+
+        // Show alert message
+        function showAlert(message, type = 'error') {
+            const alert = document.getElementById('alert');
+            alert.textContent = message;
+            alert.className = `alert alert-${type} show`;
+            
+            setTimeout(() => {
+                alert.className = 'alert';
+            }, 5000);
+        }
+
+        // Handle login form submission
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const btnLogin = document.getElementById('btnLogin');
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Disable button and show loading
+            btnLogin.disabled = true;
+            btnLogin.innerHTML = 'Đang đăng nhập <span class="loading"></span>';
+
+            try {
+                const response = await fetch(`${API_URL}/api/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    // Check if user is admin
+                    if (data.data.user.role !== 'admin') {
+                        showAlert('Bạn không có quyền truy cập Admin Panel!', 'error');
+                        btnLogin.disabled = false;
+                        btnLogin.textContent = 'Đăng nhập';
+                        return;
+                    }
+
+                    // Save token and user info
+                    localStorage.setItem('adminToken', data.data.token);
+                    localStorage.setItem('adminUser', JSON.stringify(data.data.user));
+
+                    showAlert('Đăng nhập thành công! Đang chuyển hướng...', 'success');
+
+                    // Redirect to dashboard after 1 second
+                    setTimeout(() => {
+                        window.location.href = '/admin/dashboard';
+                    }, 1000);
+                } else {
+                    showAlert(data.error || 'Đăng nhập thất bại!', 'error');
+                    btnLogin.disabled = false;
+                    btnLogin.textContent = 'Đăng nhập';
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                showAlert('Không thể kết nối đến server. Vui lòng thử lại!', 'error');
+                btnLogin.disabled = false;
+                btnLogin.textContent = 'Đăng nhập';
+            }
+        });
+    </script>
+</body>
+</html>

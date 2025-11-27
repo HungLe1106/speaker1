@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "username": "admin",
+    "role": "admin",
+    "salt": "fa79ca9398d1b3af499164bf49900911",
+    "hash": "45e0428b3a81aa45cc61261621bc82dfb9abcc1ccd634e8bc9fb113b91ef09619cf328b2c99f84eede404c9608d854b492bc0f51b753fa9bd0cd2992eddf201d"
+  },
+  {
+    "id": "2",
+    "username": "user",
+    "role": "user",
+    "salt": "20079ae5e4df6b8616351b7c2ed16810",
+    "hash": "fa9870b5ca86ceba6475ff5db2911a08de4cb96ac9678b56f9d9de977360ccefdf350bdc870ccd3ab1bc920e91079dd672cc4bcf679fbf2a1688a1451144a583"
+  },
+  {
+    "id": "1761123905178",
+    "username": "testx",
+    "role": "user",
+    "salt": "261c587f8a73ae6b95cf1b78448021e3",
+    "hash": "71de15a915b577a8f10e312d942f58314ba677965bdf01cc31e6e75d20c8d5e5e18bca1325cf2fbf79611ebc4d7f5b86afb0db7d247591e5ef9d155042cd85f9"
+  },
+  {
+    "id": "1761123957843",
+    "username": "THI",
+    "role": "user",
+    "salt": "a8564be3b026c41b2020b9d502393a4c",
+    "hash": "9d5ad674580f68ad5c49f65a9e5aee04e2e160fd2b634acab73a0b28fb4c3e9492c177e9072d0de218a1c50b1078df158e81b644547b7bbd5f0d081600f53405"
+  },
+  {
+    "id": "1761123989899",
+    "username": "THIrhr",
+    "role": "user",
+    "salt": "271cac2e5154f7c81c61bb8fd82510ac",
+    "hash": "454f574b5d7762e3d699368269e7e86bb7808c405b0cde1e986f741cff7dd72500e9eab5414d3772e12ecef375d197f8040cd8161e41a104d82345d23d24716b"
+  },
+  {
+    "id": "1761148399953",
+    "username": "THI pham",
+    "role": "user",
+    "salt": "47e546a5309befb12780a2a9d877772e",
+    "hash": "dee5562e48cb1f4888e6aa3f6b34aac3ae5e05f09247f262b6e539f62ca6ae807dda141e14d9aaca14380f7d7529375088794dfa5a684d50d56e4204798f263c"
+  },
+  {
+    "id": "1761203388661",
+    "username": "THI_tb",
+    "role": "user",
+    "salt": "7c96402f85b1017e18e71cfc3f451be8",
+    "hash": "0ed0d1dbdd664f7d9bb05933d9759e4bd3806a47829c160ebcc6ec9195c1550d6a57237f27acadb4f6b5174b5405b82ff7f877ddc55b83154015ee11512cea7d"
+  },
+  {
+    "id": "1761220111822",
+    "username": "THIddd",
+    "role": "user",
+    "salt": "35ba8bb8a317adfee5d49fc7fff8d62a",
+    "hash": "a5e516f83b8a689ce64c5e311a9728d7d128269e8fa80a9de112b9d5a85f4045eb22c70692bcbde65f9e5323c2fd0a8ac02df058bcb6d2e41f2f270ed0980afa"
+  },
+  {
+    "id": "1761316668562",
+    "username": "THItbbb",
+    "role": "user",
+    "salt": "ca70024123c992e97b37ff92bbd2da40",
+    "hash": "24dc4b353bd861f6e0987ac11f49eb136e6bf62c1abd1cd0006bd5474a7f2fbef9f1ad368f99861085329f39f2d06ef5344b31333d18faf5cff13e829349cefd"
+  },
+  {
+    "id": "1762247354150",
+    "username": "lingk",
+    "role": "user",
+    "salt": "4bf29f7aaebe0613d2539df3c0b894b2",
+    "hash": "2cc17e9ec8610956b0f83faae101b3e599f9171bc0c923fd463248c1b5b0eb97b65bf6e573a399bcdf73b6d4fb4b1955c61f464483ab7d5283b504bdeddece5b"
+  }
+]

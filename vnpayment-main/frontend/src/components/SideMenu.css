@@ -1,0 +1,60 @@
+.side-menu {
+  background: var(--bg);
+  border-radius: var(--radius);
+  box-shadow: 0 0 0 1px rgba(0,0,0,.05);
+  padding: 0;
+  min-width: 210px;
+  max-width: 240px;
+  margin-right: 32px;
+  font-family: "Amazon Ember", Arial, sans-serif;
+  height: fit-content;
+  border: 1px solid var(--border-color);
+}
+
+.side-menu-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  padding: 12px 16px;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--surface);
+}
+
+.side-menu-list {
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+}
+
+.side-menu-list li {
+  padding: 10px 16px;
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+  transition: background-color 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-left: 3px solid transparent;
+}
+
+.side-menu-list li.active {
+  background-color: #FFF5E6;
+  color: var(--text);
+  font-weight: 700;
+  border-left-color: var(--amazon-orange);
+}
+
+.side-menu-list li:hover {
+  background-color: #F3F3F3;
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .side-menu {
+    margin-right: 0;
+    margin-bottom: 24px;
+    max-width: 100%;
+  }
+}

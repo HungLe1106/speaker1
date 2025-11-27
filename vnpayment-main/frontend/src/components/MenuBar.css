@@ -1,0 +1,47 @@
+.menu-bar {
+  background: #232f3e;
+  padding: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  margin-top: 0;
+}
+
+.menu-bar .container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 15px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-bar ul {
+  list-style: none;
+  display: flex;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  height: 100%;
+}
+
+.menu-bar li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.1s;
+  padding: 8px 9px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  white-space: nowrap;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.menu-bar li a:hover {
+  border-color: #fff;
+}
