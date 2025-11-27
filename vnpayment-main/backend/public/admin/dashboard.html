@@ -1343,7 +1343,10 @@ Response: { "success": true, "message": "Order cancelled" }</pre>
     </div>
 
     <script>
-        const API_URL = 'http://localhost:5001';
+        // Auto-detect API URL based on environment
+        const API_URL = window.location.hostname === 'localhost' 
+            ? 'http://localhost:5001' 
+            : window.location.origin;
         let token = localStorage.getItem('adminToken');
         let user = JSON.parse(localStorage.getItem('adminUser') || '{}');
 

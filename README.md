@@ -13,6 +13,18 @@
 
 ---
 
+## 🌐 Live Demo
+
+| Trang | URL |
+|-------|-----|
+| 🛍️ **Website** | [https://speaker1.vercel.app](https://speaker1.vercel.app) |
+| 🔧 **Admin Panel** | [https://speaker1.onrender.com/admin](https://speaker1.onrender.com/admin) |
+| 📡 **API Backend** | [https://speaker1.onrender.com](https://speaker1.onrender.com) |
+
+> ⚠️ *Render free tier có thể mất 30-60s để "wake up" nếu không hoạt động*
+
+---
+
 ## 📋 Mục lục
 
 - [Giới thiệu](#-giới-thiệu)
