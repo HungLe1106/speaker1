@@ -1,0 +1,8 @@
+{
+  "buildCommand": "cd vnpayment-main/frontend && npm install && npm run build",
+  "outputDirectory": "vnpayment-main/frontend/build",
+  "framework": "create-react-app",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
